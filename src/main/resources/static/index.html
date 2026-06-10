@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduFinance</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <div>
+                <h1>EduFinance</h1>
+                <p>Dashboard de aprendizado, aulas e investimentos financeiros.</p>
+            </div>
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#explorar">Explorar</a>
+                <a href="#resultados">Resultados</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="dashboard">
+            <div class="hero-content">
+                <h2>Visualize seus dados com facilidade</h2>
+                <p>Use a interface abaixo para navegar por usuários, cursos, aulas, investimentos, simulações e quizzes.</p>
+                <div class="hero-actions">
+                    <button type="button" data-action="loadUsuarios">Usuários</button>
+                    <button type="button" data-action="loadCursos">Cursos</button>
+                    <button type="button" data-action="loadAulas">Aulas</button>
+                    <button type="button" data-action="loadInvestimentos">Investimentos</button>
+                    <button type="button" data-action="loadSimulacoes">Simulações</button>
+                    <button type="button" data-action="loadQuizzes">Quizzes</button>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Resultados</h3>
+                <p>Os dados retornados pela API serão exibidos aqui em tempo real.</p>
+                <div class="status-card" id="statusCard">Clique em um botão acima para carregar dados.</div>
+            </div>
+        </section>
+
+        <section class="explore" id="explorar">
+            <h2>Explorar filtros</h2>
+            <div class="grid grid-3">
+                <article>
+                    <h3>Pesquisa por usuário</h3>
+                    <label>Buscar por email</label>
+                    <input type="text" id="emailInput" placeholder="ex: usuario@exemplo.com" />
+                    <button type="button" id="btnEmail">Buscar</button>
+                </article>
+                <article>
+                    <h3>Cursos</h3>
+                    <label>Categoria</label>
+                    <input type="text" id="cursoCategoria" placeholder="Finanças pessoais" />
+                    <button type="button" id="btnCursoCategoria">Buscar</button>
+                </article>
+                <article>
+                    <h3>Aulas</h3>
+                    <label>Tipo de conteúdo</label>
+                    <input type="text" id="aulaTipo" placeholder="Vídeo, artigo" />
+                    <button type="button" id="btnAulaTipo">Buscar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="results" id="resultados">
+            <h2>Dados</h2>
+            <div class="table-wrap">
+                <table id="resultTable">
+                    <thead>
+                        <tr><th>Campo</th><th>Valor</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">EduFinance · Visualização de dados com Spring Boot</div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
